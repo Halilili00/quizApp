@@ -1,7 +1,9 @@
 let millisec = 0;
 let sec = 0;
+let min = 0;
 const millisecElement = document.getElementById("millisec");
 const secElement = document.getElementById("sec");
+const minElement = document.getElementById("min")
 const Interval = setInterval(startTimer, 10);
 
 function startTimer(){
@@ -22,6 +24,17 @@ function startTimer(){
 
     if(sec > 9){
         secElement.innerHTML = sec;
+    }
+
+    if(sec > 60){
+        min++;
+        minElement.innerHTML = "0" + min;
+        sec = 0;
+        secElement.innerHTML = "0" + sec;
+    }
+
+    if(min > 9){
+        minElement.innerHTML = min;
     }
 }
 
